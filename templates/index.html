@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Event Registration System</title>
+
+<style>
+body {
+    margin:0;
+    font-family:Arial;
+    background: linear-gradient(to right, #7cb0d5, #88a1c7);
+}
+.header {
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+.container {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    width:80%;
+    margin:30px auto;
+}
+.card {
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.2);
+    text-align:center;
+}
+input, button {
+    width:100%;
+    margin:5px 0;
+    padding:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+button {
+    background:#007bff;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+button:hover {
+    background:#0056b3;
+}
+a {
+    display:block;
+    margin-top:10px;
+    text-decoration:none;
+    color:#007bff;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Event Registration System</h1>
+    <p>Add users, create events, register and view participants</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h3>Add User</h3>
+<form action="/add_user" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<button>Add User</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Add Event</h3>
+<form action="/add_event" method="POST">
+<input type="text" name="event_name" placeholder="Event Name" required>
+<input type="date" name="date" required>
+<button>Add Event</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Register</h3>
+<form action="/register" method="POST">
+<input type="number" name="user_id" placeholder="User ID" required>
+<input type="number" name="event_id" placeholder="Event ID" required>
+<button>Register</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Participants</h3>
+<form action="/participants" method="GET">
+    <button>View Participants</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Update User</h3>
+<form action="/update_user" method="POST">
+<input type="number" name="user_id" placeholder="User ID" required>
+<input type="text" name="name" placeholder="New Name" required>
+<input type="email" name="email" placeholder="New Email" required>
+<button>Update User</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Delete User</h3>
+<form action="/delete_user" method="POST">
+<input type="number" name="user_id" placeholder="User ID" required>
+<button>Delete User</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Update Event</h3>
+<form action="/update_event" method="POST">
+<input type="number" name="event_id" placeholder="Event ID" required>
+<input type="text" name="event_name" placeholder="New Event Name" required>
+<input type="date" name="date" required>
+<button>Update Event</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Delete Event</h3>
+<form action="/delete_event" method="POST">
+<input type="number" name="event_id" placeholder="Event ID" required>
+<button>Delete Event</button>
+</form>
+</div>
+
+</div>
+</body>
+</html>

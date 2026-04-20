@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Participants</title>
+<style>
+body { font-family:Arial; text-align:center; background:#eef2f7; }
+table {
+    margin:auto;
+    border-collapse:collapse;
+    width:60%;
+    background:white;
+}
+th {
+    background:#007bff;
+    color:white;
+}
+td, th {
+    padding:10px;
+    border:1px solid #ddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Participants List</h2>
+<table>
+<tr>
+<th>User</th>
+<th>Event</th>
+</tr>
+
+{% for p in data %}
+<tr>
+<td>{{ p[0] }}</td>
+<td>{{ p[1] }}</td>
+</tr>
+{% endfor %}
+
+</table>
+<br>
+<form action="/" method="GET">
+<button>Back To Home</button>
+</form>
+</body>
+</html>
